@@ -28,3 +28,11 @@ jobs:
     steps:
       - name: Style
         run: test -z $(go fmt ./...)
+
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
+
+      - uses: dominikh/staticcheck-action@v1
+        with:
+          version: "latest"
